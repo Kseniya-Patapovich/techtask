@@ -1,4 +1,4 @@
-package com.example.techtask.service.repository;
+package com.example.techtask.repository;
 
 import com.example.techtask.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;

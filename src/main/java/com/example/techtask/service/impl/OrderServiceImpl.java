@@ -2,7 +2,7 @@ package com.example.techtask.service.impl;
 
 import com.example.techtask.model.Order;
 import com.example.techtask.service.OrderService;
-import com.example.techtask.service.repository.OrderRepository;
+import com.example.techtask.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
