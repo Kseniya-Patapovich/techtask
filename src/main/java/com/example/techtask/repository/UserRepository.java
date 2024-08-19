@@ -9,9 +9,9 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
     @Query(nativeQuery = true, value = """
-            SELECT u.* 
+            SELECT u.*
             FROM users u
-            JOIN orders o ON u.id = o.user_id 
+            JOIN orders o ON u.id = o.user_id
             WHERE EXTRACT(YEAR FROM o.created_at) = :year 
             AND CAST(o.order_status AS varchar) = :orderStatus
             GROUP BY u.id 
