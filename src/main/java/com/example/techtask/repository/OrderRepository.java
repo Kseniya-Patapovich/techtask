@@ -10,14 +10,14 @@ import java.util.List;
 public interface OrderRepository extends JpaRepository<Order, Integer> {
     @Query(nativeQuery = true, value = """
             SELECT * FROM orders
-            WHERE quantity > 1 ORDER BY created_at DESC LIMIT 1
+            WHERE quantity > :quantity ORDER BY created_at DESC LIMIT 1
             """)
-    Optional<Order> findNewestOrderWithMoreThanOneItem();
+    Optional<Order> findNewestOrderWithMoreThanOneItem(int quantity);
 
     @Query(nativeQuery = true, value = """
             SELECT o.* FROM orders o JOIN users u ON o.user_id = u.id
-            WHERE u.user_status = 'ACTIVE'
+            WHERE CAST(u.user_status AS varchar) = :userStatus
             ORDER BY o.created_at ASC
             """)
-    List<Order> findOrdersFromActiveUsersOrderedByCreationDate();
+    List<Order> findOrdersFromActiveUsersOrderedByCreationDate(String userStatus);
 }
