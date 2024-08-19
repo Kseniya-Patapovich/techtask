@@ -2,15 +2,13 @@ package com.example.techtask.service.impl;
 
 import com.example.techtask.model.User;
 import com.example.techtask.model.enumiration.OrderStatus;
-import com.example.techtask.service.UserService;
 import com.example.techtask.repository.UserRepository;
+import com.example.techtask.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
